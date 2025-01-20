@@ -1,0 +1,82 @@
+﻿<Window x:Class="f1_app.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:f1_app" 
+        xmlns:ViewModel="clr-namespace:f1_app.MVVM.ViewModel" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="920"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResize"
+        Background="Transparent"
+        AllowsTransparency="False">
+
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#27292b">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="135"/>
+
+                <ColumnDefinition />
+
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+
+
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{Binding Root.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0].Constructor.name}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="#de2514"
+                       FontSize="22"
+                       Margin="20,0,0,0" Height="29" Width="87"/>
+            <TextBlock Text="Formula 1 Standings"
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home"
+                             IsChecked="True"
+                             Foreground="White"
+                             Height="50"
+                             FontSize="14"
+                             Command="{Binding HomeViewCommand}"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton Content="News"
+                             Foreground="White"
+                             Height="50"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Name="News"
+                             ></RadioButton>
+                <RadioButton Content="Standings"
+                             Foreground="White"
+                             Height="50"
+                             FontSize="14"
+                             Command="{Binding StandingsViewCommand}"
+                             Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked"/>
+            </StackPanel>
+
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10,10,10,10"
+                            Content="{Binding CurrentView}">
+
+            </ContentControl>
+
+
+        </Grid>
+
+
+
+
+    </Border>
+</Window>
