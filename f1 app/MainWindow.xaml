@@ -20,6 +20,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="135"/>
+                
 
                 <ColumnDefinition />
 
@@ -39,7 +40,7 @@
                        Foreground="#de2514"
                        FontSize="22"
                        Margin="20,0,0,0" Height="29" Width="87"/>
-            <TextBlock Text="Formula 1 Standings"></TextBlock>
+            
 
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Home"
@@ -67,9 +68,15 @@
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10,10,10,10"
+                            Margin="5,5,5,5"
                             Content="{Binding CurrentView}">
 
+            </ContentControl>
+            <ContentControl Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="5,5,5,5"
+                            Content="{Binding StandingsTitle}">
+                
             </ContentControl>
 
 

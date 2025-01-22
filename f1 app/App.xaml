@@ -23,16 +23,27 @@
 
             <DataTemplate DataType="{x:Type ViewModel:ConStandingsViewModel}">
                 <view:ConStandingsView/>
+                
 
             </DataTemplate>
-            <DataTemplate DataType="{x:Type ViewModel:DriverStandingViewModel}">
-                <view:Grid/>
-            </DataTemplate>
+            
+            
+            
 
-            <DataTemplate DataType="{x:Type ViewModel:ControlsViewModel}">
-                <view:ControlsView/>
+            
+            
+            
+            
+          
+            
+            
+            
+            
 
-            </DataTemplate>
+           
+            
+            
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

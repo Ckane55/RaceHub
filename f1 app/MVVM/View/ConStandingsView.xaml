@@ -6,34 +6,47 @@
              xmlns:local="clr-namespace:f1_app.MVVM.View" 
              xmlns:viewmodel="clr-namespace:f1_app.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Height="499">
 
 
-    <UserControl.DataContext>
-        <viewmodel:ConStandingsViewModel/>
-    </UserControl.DataContext>
 
-    <Grid>
-        
+
+
+    <Grid Width="790">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+
+
+
 
 
         <DataGrid
      
-     RowHeight="35" 
-     BorderBrush="Black"
-     CanUserSortColumns="False"
-     CanUserResizeRows="False"
-     HeadersVisibility="Column"
-     AlternatingRowBackground="#27292b"
-     RowBackground="#313437"
-     Foreground="White"
-     ColumnWidth="240"
-     Margin="10,64,0,0"
-     Name="grid"
-     AutoGenerateColumns="False"
-     ItemsSource="{Binding Teams}">
+        RowHeight="35" 
+        BorderBrush="Black"
+        CanUserSortColumns="False"
+        CanUserResizeRows="False"
+        HeadersVisibility="Column"
+        AlternatingRowBackground="#27292b"
+        RowBackground="#313437"
+        Foreground="White"
+        ColumnWidth="240"
+        Margin="10,54,0,0"
+        Name="grid"
+        AutoGenerateColumns="False"
+        ItemsSource="{Binding Teams}" >
+
+
 
             <DataGrid.Resources>
+
+
                 <Style  TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#27292b" />
                     <Setter Property="Foreground" Value="White"/>
@@ -81,7 +94,15 @@
 
             </DataGrid.Columns>
         </DataGrid>
-
+        <ComboBox HorizontalAlignment="Left" 
+                  Margin="10,24,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="120"
+                  ItemsSource="{Binding AvailableYears}"
+                  SelectedItem="{Binding SelectedYear}"/>
+        <TextBlock TextWrapping="Wrap" Text="Year" Margin="10,0,707,430"
+                   Foreground="White"
+                   FontSize="18"/>
 
 
 

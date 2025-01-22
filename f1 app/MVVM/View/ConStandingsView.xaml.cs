@@ -27,9 +27,10 @@ namespace f1_app.MVVM.View
             InitializeComponent();
             _viewModel = new ConStandingsViewModel();
             DataContext = _viewModel;
+            
 
         }
 
-   
+    
     }
 }
