@@ -17,18 +17,20 @@ using System.Windows.Shapes;
 namespace f1_app.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for ConStandingsView.xaml
+    /// Interaction logic for DriverStandingsView.xaml
     /// </summary>
-    public partial class ConStandingsView : UserControl
+    /// 
+    
+    public partial class DriverStandingsView : UserControl
     {
-        private ConStandingsViewModel _viewModel;
-        public ConStandingsView()
+        private DriverStandingViewModel _viewModel;
+        public DriverStandingsView()
         {
+           
             InitializeComponent();
-            _viewModel = new ConStandingsViewModel();
-            DataContext = _viewModel;
-            
+            _viewModel = new DriverStandingViewModel();
 
+            DataContext = _viewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

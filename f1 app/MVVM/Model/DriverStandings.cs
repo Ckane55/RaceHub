@@ -10,20 +10,20 @@ namespace f1_app.MVVM.Model
     {
 
 
-        string driverName {  get; set; }
-        string nationality {  get; set; }
-        string team {  get; set; }
-        string position {  get; set; }
-        string points {  get; set; }
-        public object Driver { get; internal set; }
+        public string DriverName {  get; set; }
+        public string Nationality {  get; set; }
+        public string Team {  get; set; }
+        public string Position {  get; set; }
+        public string Points {  get; set; }
+        public object Driver { get; set; }
 
-        public DriverStandings(string Name, string nation, string Position, string Team, string Points) 
+        public DriverStandings(string name, string nation, string position, string team, string points) 
         {
-            driverName = Name;
-            nationality = nation;
-            position = Position;
-            points = Points;
-            team = Team;
+            DriverName = name;
+            Nationality = nation;
+            Position = position;
+            Points = points;
+            Team = team;
 
 
         }

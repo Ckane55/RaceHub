@@ -20,19 +20,52 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="135"/>
-                
+
 
                 <ColumnDefinition />
 
 
             </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
-                <RowDefinition/>
 
 
-            </Grid.RowDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="255*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,26,0,0">
+                    <RadioButton Content="Home"
+                          IsChecked="True"
+                          Foreground="White"
+                          Height="50"
+                          FontSize="14"
+                          Command="{Binding HomeViewCommand}"
+                          Style="{StaticResource MenuButtonTheme}"/>
+                    <RadioButton Content="News"
+                          Foreground="White"
+                          Height="50"
+                          FontSize="14"
+                          Style="{StaticResource MenuButtonTheme}"
+                          Name="News"
+                          ></RadioButton>
+                    <RadioButton Content="Standings"
+                          Foreground="White"
+                          Height="50"
+                          FontSize="14"
+                          Command="{Binding StandingsViewCommand}"
+                          Style="{StaticResource MenuButtonTheme}"/>
+
+                </StackPanel>
+
+
+
+            </Grid>
+
+
+
+
 
             <TextBlock Text="{Binding Root.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0].Constructor.name}"
                        VerticalAlignment="Center"
@@ -40,30 +73,9 @@
                        Foreground="#de2514"
                        FontSize="22"
                        Margin="20,0,0,0" Height="29" Width="87"/>
-            
 
-            <StackPanel Grid.Row="1">
-                <RadioButton Content="Home"
-                             IsChecked="True"
-                             Foreground="White"
-                             Height="50"
-                             FontSize="14"
-                             Command="{Binding HomeViewCommand}"
-                             Style="{StaticResource MenuButtonTheme}"/>
-                <RadioButton Content="News"
-                             Foreground="White"
-                             Height="50"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Name="News"
-                             ></RadioButton>
-                <RadioButton Content="Standings"
-                             Foreground="White"
-                             Height="50"
-                             FontSize="14"
-                             Command="{Binding StandingsViewCommand}"
-                             Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked"/>
-            </StackPanel>
+
+
 
 
             <ContentControl Grid.Row="1"
@@ -72,12 +84,7 @@
                             Content="{Binding CurrentView}">
 
             </ContentControl>
-            <ContentControl Grid.Row="0"
-                            Grid.Column="1"
-                            Margin="5,5,5,5"
-                            Content="{Binding StandingsTitle}">
-                
-            </ContentControl>
+          
 
 
         </Grid>

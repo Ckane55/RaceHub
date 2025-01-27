@@ -26,24 +26,34 @@
                 
 
             </DataTemplate>
-            
-            
-            
+            <DataTemplate DataType="{x:Type ViewModel:DriverStandingViewModel}">
+                <view:DriverStandingsView/>
 
-            
-            
-            
-            
-          
-            
-            
-            
-            
 
-           
-            
-            
-            
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type ViewModel:StandingControlViewModel}">
+                <view:StandingsControl/>
+
+
+            </DataTemplate>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

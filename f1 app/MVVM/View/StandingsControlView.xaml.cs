@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace f1_app.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for StandingsTitle.xaml
+    /// Interaction logic for StandingsControl.xaml
     /// </summary>
-    public partial class StandingsTitle : UserControl
+    public partial class StandingsControl : UserControl
     {
-        public StandingsTitle()
+        public StandingsControl()
         {
             InitializeComponent();
         }

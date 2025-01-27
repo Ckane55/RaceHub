@@ -21,9 +21,6 @@ namespace f1_app
             InitializeComponent();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
+     
     }
 }

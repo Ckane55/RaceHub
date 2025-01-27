@@ -18,7 +18,8 @@ namespace f1_app.MVVM.ViewModel
         private readonly HttpClient client = new HttpClient();
         private string selectedYear;
         public string selectedType;
-        
+        public DriverStandingViewModel DriverVM { get; set; }
+
         public ObservableCollection<ConStandings> Teams { get; set; }
 
 
@@ -44,6 +45,7 @@ namespace f1_app.MVVM.ViewModel
 
         public ConStandingsViewModel()
         {
+            DriverVM = new DriverStandingViewModel();
             Teams = new ObservableCollection<ConStandings>();
             selectedYear = "2024";
             selectedType = "Constructors";

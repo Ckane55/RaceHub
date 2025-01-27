@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="f1_app.MVVM.View.StandingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:f1_app.MVVM.View" 
+             xmlns:viewmodel="clr-namespace:f1_app.MVVM.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Height="499">
+
+
+
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+
+
+        </Grid.RowDefinitions>
+
+
+
+
+
+
+
+
+
+
+
+
+        <ContentControl Grid.Row="1"
+                Content="{Binding ControlCurrentView}">
+
+
+        </ContentControl>
+        <Button Content="Driver Standings" 
+                HorizontalAlignment="Left" 
+                Margin="150,24,0,0" VerticalAlignment="Top"
+                Command="{Binding DriverGridCommand}" 
+                Height="21.96" Width="130" 
+                Grid.Row="1"/>
+        <Button Content="Constructor Standings" 
+                HorizontalAlignment="Left" 
+                Margin="305,24,0,0" 
+                VerticalAlignment="Top"
+        Command="{Binding ConGridCommand}" 
+                Height="21.96" 
+                Width="130" 
+                Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" 
+                   Margin="10,10,0,0" 
+                   TextWrapping="Wrap" 
+                   FontSize="24"
+                   FontFamily="/Fonts/#Alphacorsa"
+                   VerticalAlignment="Top" 
+                   Height="34" 
+                   Width="350"
+                   Text="Formula 1 Standings"
+                   Foreground="White"
+                   />
+
+
+
+
+
+    </Grid>
+
+
+
+
+</UserControl>
+
+

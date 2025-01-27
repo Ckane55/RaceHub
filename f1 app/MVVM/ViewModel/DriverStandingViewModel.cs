@@ -1,8 +1,10 @@
-﻿using f1_app.MVVM.Model;
+﻿using f1_app.Core;
+using f1_app.MVVM.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -10,15 +12,18 @@ using System.Threading.Tasks;
 
 namespace f1_app.MVVM.ViewModel
 {
+   
     class DriverStandingViewModel
     {
         private readonly HttpClient client = new HttpClient();
         private string selectedYear;
+        public string selectedType;
         private List<string> availableYears;
         public ObservableCollection<DriverStandings> Drivers { get; set; }
 
 
         public List<string> AvailableYears { get; set; }
+        public List<string> StandingsType { get; set; }
 
 
         public string SelectedYear
@@ -30,6 +35,16 @@ namespace f1_app.MVVM.ViewModel
                 getDriverStandings(selectedYear);
             }
         }
+        public string SelectedType
+        {
+            get { return selectedType; }
+            set
+            {
+                selectedType = value;
+                
+            }
+        }
+
 
 
 
@@ -37,7 +52,10 @@ namespace f1_app.MVVM.ViewModel
         public DriverStandingViewModel()
         {
             Drivers = new ObservableCollection<DriverStandings>();
-            getDriverStandings("2024");
+            SelectedYear = "2024";
+            SelectedType = "Drivers";
+            
+            getDriverStandings(SelectedYear);
 
             AvailableYears = new List<string>
         {
@@ -45,6 +63,8 @@ namespace f1_app.MVVM.ViewModel
             "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005",
             "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995"
         };
+
+            StandingsType = new List<string> { "Constructors", "Drivers" };
 
 
 
@@ -63,7 +83,7 @@ namespace f1_app.MVVM.ViewModel
 
             string response = await client.GetStringAsync(url);
 
-            
+
 
             var convert = JsonConvert.DeserializeObject<Root2>(response);
             Drivers.Clear();
@@ -72,12 +92,14 @@ namespace f1_app.MVVM.ViewModel
             {
                 // DriverStandings(string Name, string nation, string Position, string Team, string Points) 
 
-                Drivers.Add(new DriverStandings(standing.Driver.givenName, standing.Driver.nationality, standing.position, standing.Constructors[0].name,standing.points));
+                Drivers.Add(new DriverStandings(standing.Driver.givenName, standing.Driver.nationality, standing.position, standing.Constructors[0].name, standing.points));
 
 
 
             }
         }
     }
+
+
 }
 
